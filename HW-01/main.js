@@ -1,3 +1,9 @@
+const UAH = 1;
+const USD = 26.30;
+const EUR = 30.46;
+const CAD = 21.20;
+const GBP = 35.81;
+
 let convertAgain;
 do {
     let exchangeFrom;
@@ -8,93 +14,91 @@ do {
     do {
         enterAmount = +prompt('Enter the amount of money:');
     } while (Number(enterAmount) !== enterAmount)
-
     let exchangeTo;
     do {
         exchangeTo = prompt('Now, enter the currency you want to exchange to (UAH, USD, EUR, CAD, GBP):').toLowerCase();
     } while (exchangeFrom !== 'uah' && exchangeFrom !== 'usd' && exchangeFrom !== 'eur' && exchangeFrom !== 'cad' && exchangeFrom !== 'gbp')
 
     if (exchangeFrom === 'uah' && exchangeTo === 'usd') {
-        const convertUAHtoUSD = enterAmount / 26.30;
+        const convertUAHtoUSD = enterAmount * UAH / USD;
         alert('Amount: ' + convertUAHtoUSD.toFixed(2) + ' USD');
     }
     if (exchangeFrom === 'uah' && exchangeTo === 'eur') {
-        const convertUAHtoEUR = enterAmount / 30.46;
+        const convertUAHtoEUR = enterAmount * UAH / EUR;
         alert('Amount: ' + convertUAHtoEUR.toFixed(2) + ' EUR');
     }
     if (exchangeFrom === 'uah' && exchangeTo === 'cad') {
-        const convertUAHtoCAD = enterAmount / 21.20;
+        const convertUAHtoCAD = enterAmount * UAH / CAD;
         alert('Amount: ' + convertUAHtoCAD.toFixed(2) + ' CAD');
     }
     if (exchangeFrom === 'uah' && exchangeTo === 'gbp') {
-        const convertUAHtoGBP = enterAmount / 35.81;
+        const convertUAHtoGBP = enterAmount * UAH / GBP;
         alert('Amount: ' + convertUAHtoGBP.toFixed(2) + ' GBP');
     }
     if (exchangeFrom === 'usd' && exchangeTo === 'uah') {
-        const convertUSDtoUAH = enterAmount * 26.30;
+        const convertUSDtoUAH = enterAmount * USD / UAH;
         alert('Amount: ' + convertUSDtoUAH.toFixed(2) + ' UAH');
     }
     if (exchangeFrom === 'usd' && exchangeTo === 'eur') {
-        const convertUSDtoEUR = enterAmount * 0.86;
+        const convertUSDtoEUR = enterAmount * USD / EUR;
         alert('Amount: ' + convertUSDtoEUR.toFixed(2) + ' EUR');
     }
     if (exchangeFrom === 'usd' && exchangeTo === 'cad') {
-        const convertUSDtoCAD = enterAmount * 1.24;
+        const convertUSDtoCAD = enterAmount * USD / CAD;
         alert('Amount: ' + convertUSDtoCAD.toFixed(2) + ' CAD');
     }
     if (exchangeFrom === 'usd' && exchangeTo === 'gbp') {
-        const convertUSDtoGBP = enterAmount * 0.73;
+        const convertUSDtoGBP = enterAmount * USD / GBP;
         alert('Amount: ' + convertUSDtoGBP.toFixed(2) + ' GBP');
     }
     if (exchangeFrom === 'eur' && exchangeTo === 'uah') {
-        const convertEURtoUAH = enterAmount * 30.46;
+        const convertEURtoUAH = enterAmount * EUR / UAH;
         alert('Amount: ' + convertEURtoUAH.toFixed(2) + ' UAH');
     }
     if (exchangeFrom === 'eur' && exchangeTo === 'usd') {
-        const convertEURtoUSD = enterAmount * 1.16;
+        const convertEURtoUSD = enterAmount * EUR / USD;
         alert('Amount: ' + convertEURtoUSD.toFixed(2) + ' USD');
     }
     if (exchangeFrom === 'eur' && exchangeTo === 'cad') {
-        const convertEURtoCAD = enterAmount * 1.44;
+        const convertEURtoCAD = enterAmount * EUR / CAD;
         alert('Amount: ' + convertEURtoCAD.toFixed(2) + ' CAD');
     }
     if (exchangeFrom === 'eur' && exchangeTo === 'gbp') {
-        const convertEURtoGBP = enterAmount * 0.85;
+        const convertEURtoGBP = enterAmount * EUR / GBP;
         alert('Amount: ' + convertEURtoGBP.toFixed(2) + ' GBP');
     }
     if (exchangeFrom === 'cad' && exchangeTo === 'uah') {
-        const convertCADtoUAH = enterAmount * 21.21;
+        const convertCADtoUAH = enterAmount * CAD / UAH;
         alert('Amount: ' + convertCADtoUAH.toFixed(2) + ' UAH');
     }
     if (exchangeFrom === 'cad' && exchangeTo === 'usd') {
-        const convertCADtoUSD = enterAmount * 0.81;
+        const convertCADtoUSD = enterAmount * CAD / USD;
         alert('Amount: ' + convertCADtoUSD.toFixed(2) + ' USD');
     }
     if (exchangeFrom === 'cad' && exchangeTo === 'eur') {
-        const convertCADtoEUR = enterAmount * 0.70;
+        const convertCADtoEUR = enterAmount * CAD / EUR;
         alert('Amount: ' + convertCADtoEUR.toFixed(2) + ' EUR');
     }
     if (exchangeFrom === 'cad' && exchangeTo === 'gbp') {
-        const convertCADtoGBP = enterAmount * 0.59;
+        const convertCADtoGBP = enterAmount * CAD / GBP;
         alert('Amount: ' + convertCADtoGBP.toFixed(2) + ' GBP');
     }
     if (exchangeFrom === 'gbp' && exchangeTo === 'uah') {
-        const convertGBPtoUAH = enterAmount * 35.80;
+        const convertGBPtoUAH = enterAmount * GBP / UAH;
         alert('Amount: ' + convertGBPtoUAH.toFixed(2) + ' UAH');
     }
     if (exchangeFrom === 'gbp' && exchangeTo === 'usd') {
-        const convertGBPtoUSD = enterAmount * 1.36;
+        const convertGBPtoUSD = enterAmount * GBP / USD;
         alert('Amount: ' + convertGBPtoUSD.toFixed(2) + ' USD');
     }
     if (exchangeFrom === 'gbp' && exchangeTo === 'eur') {
-        const convertGBPtoEUR = enterAmount * 1.18;
+        const convertGBPtoEUR = enterAmount * GBP / EUR;
         alert('Amount: ' + convertGBPtoEUR.toFixed(2) + ' EUR');
     }
     if (exchangeFrom === 'gbp' && exchangeTo === 'cad') {
-        const convertGBPtoCAD = enterAmount * 1.69;
+        const convertGBPtoCAD = enterAmount * GBP / CAD;
         alert('Amount: ' + convertGBPtoCAD.toFixed(2) + ' CAD');
     }
     convertAgain = confirm('Do you want to convert currency again?')
 } while (convertAgain)
-
 alert('Okey, thank you!')
