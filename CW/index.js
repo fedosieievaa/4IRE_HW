@@ -14,8 +14,8 @@
 //     return arr;
 // }
 
+// _______getTower other solution________
 
-// => getTower other solution
 // const getTower = (num) => {
 //     let arr = [];
 //     for (let i = 0; i < num; i++) {
@@ -26,7 +26,9 @@
 // console.log(getTower(5));
 
 
-// ___Class Work 6___
+
+// _______CLASS WORK 6_______
+
 // const obj = {
 //     amount: 100,
 //     hours: 40
@@ -36,7 +38,6 @@
 // }
 // obj.foo = calculateSalary;
 // console.log(obj.foo())
-
 
 // Создать объект obj, с методами method1(), method2() и method3().
 //В методе method3() должна возвращаться строка« метод3».
@@ -54,3 +55,7 @@
 //     }
 // }
 // console.log(obj.method1().method2().method3());
+
+
+
+// _______CLASS WORK 7_______
