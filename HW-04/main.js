@@ -45,8 +45,7 @@ const calculateRemainder = (energy, lines) => {
         if (energy > lines[i].power) {
             result += lines[i].power * lines[i].price;
             energy -= lines[i].power;
-        }
-        if (energy < lines[i].power) {
+        } else if (energy < lines[i].power) {
             result += energy * lines[i].price;
             return result.toFixed(2);
         }
