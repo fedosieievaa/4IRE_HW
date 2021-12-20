@@ -58,4 +58,12 @@
 
 
 
-// _______CLASS WORK 7_______
+// _______CLASS WORK 8_______
+
+// const div = document.createElement('div');
+// div.classList.add('box');
+// div.innerText = "first";
+// document.body.insertAdjacentElement("beforeend", div);
+
+// const el = `<div class="box"></div>`;
+// document.body.insertAdjacentHTML("beforeend", el);
