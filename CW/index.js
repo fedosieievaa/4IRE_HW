@@ -67,3 +67,38 @@
 
 // const el = `<div class="box"></div>`;
 // document.body.insertAdjacentHTML("beforeend", el);
+
+
+
+// _______CLASS WORK 9_______
+
+
+
+// _______CLASS WORK 11_______
+// const div = document.querySelector("div");
+
+// div.addEventListener("click", function(e) {
+//     let target = e.target;
+//     if (target.tagName == "UL" && target.firstElementChild) {
+//         target.firstElementChild.classList.toggle("display");
+//     }
+//     target = target.parentNode;
+// })
+
+
+
+// _______CLASS WORK 12_______
+
+// let xhr = new XMLHttpRequest();
+
+// xhr.open("GET", "https://swapi.dev/api/starships/2/");
+
+// xhr.send();
+
+// xhr.onload = function() {
+//     if (xhr.status != 200) {
+//         alert("Error");
+//     } else {
+//         console.log(xhr.response);
+//     }
+// };

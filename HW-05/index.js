@@ -94,8 +94,12 @@ equal.addEventListener("click", getOperator);
 // const div = document.createElement("span");
 // div.innerText = "m";
 // const res = display.insertAdjacentElement("beforebegin", div);
-//2
+// 2
 // const getKeys = (e) => {
 //     const key = document.querySelector(`.button[id="${e.keyCode}"]`);
 // }
-// window.addEventListener("keydown", )
+window.addEventListener("keydown", function(e) {
+    if (e.key === 'c') {
+        getOperand();
+    }
+})
