@@ -1,0 +1,62 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: aliceblue;
+    font-size: 16px;
+}
+
+.container,
+.card_image {
+    width: 100%;
+}
+
+.container {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.card_container {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid rgb(192, 192, 192);
+    cursor: pointer;
+}
+
+.card_image,
+.card_info-title {
+    display: block;
+}
+
+.card_image {
+    margin: 0 auto;
+}
+
+.card_image,
+.card_info-title,
+.card_info_year-genre {
+    margin-bottom: 5px;
+}
+
+.card_info-title {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e859e;
+}
+
+.card_info-title:hover {
+    text-decoration: underline;
+}
+
+.card_info_year-genre {
+    color: #777;
+}
+
+.card_info-genre,
+.card_info-year {
+    display: inline;
+}
+
+.card_info-description {
+    text-align: justify;
+}
