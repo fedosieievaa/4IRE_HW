@@ -1,62 +1,176 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: aliceblue;
-    font-size: 16px;
-}
-
-.container,
-.card_image {
-    width: 100%;
-}
-
-.container {
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.card_container {
-    width: 20%;
-    padding: 10px;
-    border: 1px solid rgb(192, 192, 192);
-    cursor: pointer;
-}
-
-.card_image,
-.card_info-title {
-    display: block;
-}
-
-.card_image {
-    margin: 0 auto;
-}
-
-.card_image,
-.card_info-title,
-.card_info_year-genre {
-    margin-bottom: 5px;
-}
-
-.card_info-title {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    color: #2e859e;
-}
-
-.card_info-title:hover {
-    text-decoration: underline;
-}
-
-.card_info_year-genre {
-    color: #777;
-}
-
-.card_info-genre,
-.card_info-year {
-    display: inline;
-}
-
-.card_info-description {
-    text-align: justify;
-}
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: rgb(37, 49, 59);
+        font-size: 16px;
+    }
+    
+    .card_image {
+        width: 100%;
+    }
+    
+    h1 {
+        color: #FFFF;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .container {
+        padding: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .card_container {
+        width: 200px;
+        height: 510px;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid red;
+        background-color: rgb(225, 238, 250);
+        cursor: pointer;
+    }
+    
+    .card_image {
+        margin: 0 auto;
+    }
+    
+    .card_image,
+    .card_info-title,
+    .card_info_year-genre {
+        margin-bottom: 5px;
+    }
+    
+    .card_info-title {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        color: #2e859e;
+    }
+    
+    .card_info-title:hover {
+        text-decoration: underline;
+    }
+    
+    .card_info_year-genre {
+        color: #777;
+    }
+    
+    .card_info-genre {
+        display: inline;
+    }
+    
+    .display-none {
+        display: none;
+    }
+    
+    #more {
+        width: 130px;
+        height: 50px;
+        margin: 20px auto 0 auto;
+        background: rgb(20, 20, 80);
+        color: aliceblue;
+        border-style: none;
+        border: 3px solid rgb(153, 153, 153);
+    }
+    
+    #more:active {
+        background: rgb(5, 5, 82);
+        border: 1px solid rgb(153, 153, 153);
+        color: #FFFF;
+    }
+    
+    .page-more {
+        margin: 20px 0 50px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #page {
+        width: 50px;
+        margin: 0 auto;
+        border: 1px solid white;
+        color: white;
+        padding: 2px 5px;
+    }
+    
+    .btn,
+    #page {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .btn {
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    .popuptext {
+        position: fixed;
+        left: 50%;
+        margin-top: 20px;
+        margin-left: -250px;
+        visibility: hidden;
+        width: 30%;
+        border: 10px solid rgb(20, 20, 80);
+        border-radius: 6px;
+        background-color: rgb(198, 227, 253);
+        padding: 20px;
+    }
+    
+    .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s
+    }
+    
+    .popup_title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .popup_poster {
+        width: 25%;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+    
+    .popup_highlight {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    .popup_highlight-elem {
+        font-weight: normal;
+    }
+    
+    .popup_critics {
+        display: block;
+        text-indent: 20px;
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
