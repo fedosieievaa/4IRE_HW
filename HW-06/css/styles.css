@@ -111,7 +111,7 @@
     .popuptext {
         position: fixed;
         left: 50%;
-        margin-top: 20px;
+        top: 10px;
         margin-left: -250px;
         visibility: hidden;
         width: 30%;

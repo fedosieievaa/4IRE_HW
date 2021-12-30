@@ -86,7 +86,10 @@ const displayFilms = () => {
 
 displayFilms();
 
+displayPopup(popUpInfo);
+
 container.addEventListener("click", function(e) {
+    e.preventDefault();
     const details = fetch(
         `https://kinopoiskapiunofficial.tech/api/v2.2/films/${e.target.id}`, {
             method: "GET",
@@ -104,7 +107,6 @@ container.addEventListener("click", function(e) {
                 popUpInfo = getPopup(nameRu, description, ratingAgeLimits, shortDescription, slogan, ratingAwait, ratingFilmCritics, ratingGoodReview, ratingImdb, ratingKinopoisk, posterUrlPreview)
             });
             console.log(popUpInfo)
-            displayPopup(popUpInfo)
             document.querySelector("#myPopup").classList.toggle("show");
         })
         .catch((err) => {
