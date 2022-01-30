@@ -23,12 +23,40 @@
         justify-content: center;
     }
     
+    #del {
+        position: relative;
+        left: 93%;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    .get_more_info {
+        width: 100%;
+        height: 50px;
+        text-transform: uppercase;
+        background: #2e859e;
+        color: rgb(209, 209, 209);
+        border: 1px solid rgb(209, 209, 209);
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0 0 20px 0;
+    }
+    
+    .get_more_info:hover {
+        background: rgb(209, 209, 209);
+        color: #2e859e;
+        border-color: #2e859e;
+        transition: 0.5s ease-in-out;
+    }
+    
     .card_container {
         width: 200px;
-        height: 510px;
+        height: 560px;
         padding: 10px;
         margin: 10px;
-        border: 1px solid red;
+        border: 1px solid rgb(204, 55, 55);
+        border-radius: 5px;
         background-color: rgb(225, 238, 250);
         cursor: pointer;
     }

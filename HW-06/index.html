@@ -15,6 +15,29 @@
 
 <body>
     <h1>Click on photo to get more information</h1>
+    <div class="popuptext" id="myPopup">
+        <div>
+            <button id="del">
+                <img src="./assets/img/cancel.png" alt="delete">
+            </button>
+            <h2 class="popup_title title"></h2>
+            <div class="popup_poster-desc">
+                <img class="popup_poster poster" src="" alt="poster" />
+                <div class="popup_highlight">Описание: <span class="popup_highlight-elem desc"></span></div>
+            </div>
+            <div class="popup_highlight">Краткое описание: <span class="popup_highlight-elem short_desc"></span></div>
+            <div class="popup_highlight">Возраст: <span class="popup_highlight-elem age"></span></div>
+            <div class="popup_highlight">Слоган: <span class="popup_highlight-elem slogan"></span></div>
+            <ul>
+                <span class="popup_critics">Критики:</span>
+                <li class="popup_highlight">Await: <span class="popup_highlight-elem r1"></span></li>
+                <li class="popup_highlight">Film Critics: <span class="popup_highlight-elem r2"></span></li>
+                <li class="popup_highlight">Good Revie: <span class="popup_highlight-elem r3"></span></li>
+                <li class="popup_highlight">Imdb: <span class="popup_highlight-elem r4"></span></li>
+                <li class="popup_highlight">Kinopoisk: <span class="popup_highlight-elem r5"></span></li>
+            </ul>
+        </div>
+    </div>
     <div class="container"></div>
     <div class="page-more">
         <span id="page"></span>

@@ -3,39 +3,26 @@ const container = document.querySelector(".container");
 const popupText = document.querySelector(".popuptext");
 const page = document.querySelector("#page");
 let currentPage = 1;
-let popUpInfo;
 
 const getPopup = (title, desc, age, shortDesc, slogan, r1, r2, r3, r4, r5, poster) => {
-    return `
-    <div>
-        <h2 class="popup_title">${title}</h2>
-        <div class="popup_poster-desc">
-            <img class="popup_poster" src="${poster}" alt="poster"/>
-            <div class="popup_highlight">Описание: <span class="popup_highlight-elem">${desc}</span></div>
-        </div>
-        <div class="popup_highlight">Краткое описание: <span class="popup_highlight-elem">${shortDesc}</span></div>
-        <div class="popup_highlight">Возраст: <span class="popup_highlight-elem">${age.substring(3)}</span></div>
-        <div class="popup_highlight">Слоган: <span class="popup_highlight-elem">${slogan}</span></div>
-        <ul>
-            <span class="popup_critics">Критики:</span>
-            <li class="popup_highlight">Await: <span class="popup_highlight-elem">${r1}</span></li>
-            <li class="popup_highlight">Film Critics: <span class="popup_highlight-elem">${r2}</span></li>
-            <li class="popup_highlight">Good Revie: <span class="popup_highlight-elem">${r3}</span></li>
-            <li class="popup_highlight">Imdb: <span class="popup_highlight-elem">${r4}</span></li>
-            <li class="popup_highlight">Kinopoisk: <span class="popup_highlight-elem">${r5}</span></li>
-        </ul>
-    </div>`;
-}
-
-const displayPopup = (info) => {
-    const template = `<div class="popuptext" id="myPopup">${info}</div>`;
-    container.insertAdjacentHTML("beforebegin", template);
+    document.querySelector('.title').innerHTML = title;
+    document.querySelector('.desc').innerHTML = desc;
+    document.querySelector('.age').innerHTML = age.substring(3);
+    document.querySelector('.short_desc').innerHTML = shortDesc;
+    document.querySelector('.slogan').innerHTML = slogan;
+    document.querySelector('.r1').innerHTML = r1;
+    document.querySelector('.r2').innerHTML = r2;
+    document.querySelector('.r3').innerHTML = r3;
+    document.querySelector('.r4').innerHTML = r4;
+    document.querySelector('.r5').innerHTML = r5;
+    document.querySelector('.poster').src = poster;
 }
 
 const getFilm = (img, titleRu, titleEn, rating, ratingVoteCount, year, genres, lenght, countries, id) => {
     const template = `
         <div class="card_container">
-            <img id="${id}"  class="card_image" src="${img}" alt="Movie's image">
+            <button class="get_more_info" id="${id}">Узнать больше</button>
+            <img  class="card_image" src="${img}" alt="Movie's image">
             <div class="card_info">
                 <a class="card_info-title" href="#">
                     <h2>${titleRu} (${titleEn})</h2>
@@ -49,6 +36,7 @@ const getFilm = (img, titleRu, titleEn, rating, ratingVoteCount, year, genres, l
                 </div>
                 <p class="card_info-description"></p>
             </div>
+    
         </div>
     `;
     container.insertAdjacentHTML("beforeend", template);
@@ -68,7 +56,6 @@ const displayFilms = () => {
     promise
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
             data.films.map(({ posterUrl, nameRu, nameEn, rating, ratingVoteCount, year, genres, filmLength, countries, filmId }) => {
                 getFilm(posterUrl, nameRu, nameEn, rating, ratingVoteCount, year, genres, filmLength, countries, filmId);
             });
@@ -86,33 +73,33 @@ const displayFilms = () => {
 
 displayFilms();
 
-displayPopup(popUpInfo);
-
 container.addEventListener("click", function(e) {
     e.preventDefault();
-    const details = fetch(
-        `https://kinopoiskapiunofficial.tech/api/v2.2/films/${e.target.id}`, {
-            method: "GET",
-            headers: {
-                "X-API-KEY": "86345f7e-62a7-49aa-b982-7820be9dadc9",
-                "Content-Type": "application/json",
-            },
-        }
-    );
-    details
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            [data].map(({ nameRu, description, ratingAgeLimits, shortDescription, slogan, ratingAwait, ratingFilmCritics, ratingGoodReview, ratingImdb, ratingKinopoisk, posterUrlPreview }) => {
-                popUpInfo = getPopup(nameRu, description, ratingAgeLimits, shortDescription, slogan, ratingAwait, ratingFilmCritics, ratingGoodReview, ratingImdb, ratingKinopoisk, posterUrlPreview)
+    if (e.target.tagName === "BUTTON") {
+        const details = fetch(
+            `https://kinopoiskapiunofficial.tech/api/v2.2/films/${e.target.id}`, {
+                method: "GET",
+                headers: {
+                    "X-API-KEY": "86345f7e-62a7-49aa-b982-7820be9dadc9",
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+        details
+            .then((response) => response.json())
+            .then((data) => {
+                [data].map(({ nameRu, description, ratingAgeLimits, shortDescription, slogan, ratingAwait, ratingFilmCritics, ratingGoodReview, ratingImdb, ratingKinopoisk, posterUrlPreview }) => {
+                    getPopup(nameRu, description, ratingAgeLimits, shortDescription, slogan, ratingAwait, ratingFilmCritics, ratingGoodReview, ratingImdb, ratingKinopoisk, posterUrlPreview)
+                });
+                document.querySelector("#myPopup").classList.add("show");
+            })
+            .catch((err) => {
+                console.log("Error:", err);
             });
-            console.log(popUpInfo)
-            document.querySelector("#myPopup").classList.toggle("show");
-        })
-        .catch((err) => {
-            console.log("Error:", err);
-        });
+    }
 });
+
+document.querySelector("#del").addEventListener("click", () => document.querySelector("#myPopup").classList.remove("show"))
 
 moreBtn.addEventListener("click", () => {
     if (currentPage === 13) return;
